@@ -45,6 +45,15 @@
                             </li>
                         <?php endif; ?>
 
+                        <?php if ($_SESSION['active_page'] == 5): ?>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="mojeRecepty.php">Moje recepty</a>
+                            </li>
+                        <?php else: ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="mojeRecepty.php">Moje recepty</a>
+                            </li>
+                        <?php endif; ?>
 
                         <li class="nav-item">
                             <a class="nav-link" href="odhlasenie.php">Odhlásenie</a>
