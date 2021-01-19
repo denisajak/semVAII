@@ -120,4 +120,71 @@ class db
         }
     }
 
+    function getPosts()
+    {
+        try {
+            $this->connect();
+            $sql = "SELECT posts.p_content, users.user, date, p_id FROM posts INNER JOIN users ON posts.author_id = users.id_user";
+            $result = $this->connection->query($sql);
+
+            if ($result->num_rows >= 0) {
+                return $result;
+            }
+
+        } catch (mysqli_sql_exception $exc) {
+            echo $exc;
+            $this->connection->close();
+        }
+    }
+
+    function insertPost($p_content)
+    {
+        $this->connect();
+        $content = $this->connection->real_escape_string($p_content);
+        $id = $_SESSION['id_user'];
+        $sql = "INSERT INTO posts(author_id, p_content) VALUES ('$id', '$content')";
+        $this->connection->query($sql);
+    }
+
+    function getPost($p_id)
+    {
+        try {
+            $this->connect();
+
+            $id = $this->connection->real_escape_string($p_id);
+            $sql = "SELECT * FROM posts WHERE p_id = '$id'";
+            $result = $this->connection->query($sql);
+
+            if ($result->num_rows > 0) {
+                return $result;
+            }
+        } catch (mysqli_sql_exception $exc) {
+            echo $exc;
+            $this->connection->close();
+        }
+    }
+
+    function editPost($p_id, $p_content)
+    {
+        $this->connect();
+        $content = $this->connection->real_escape_string($p_content);
+        $id = $this->connection->real_escape_string($p_id);
+
+        $sql = "UPDATE posts SET p_content='$content', date=now() WHERE p_id='$id'";
+        $this->connection->query($sql);
+        $this->connection->close();
+
+    }
+
+    function deletePost($p_id)
+    {
+        $this->connect();
+
+        $id = $this->connection->real_escape_string($p_id);
+        $sql = "DELETE FROM posts WHERE p_id = '$id'";
+        $this->connection->query($sql);
+
+    }
+
+
 }
