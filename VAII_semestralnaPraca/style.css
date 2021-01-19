@@ -23,7 +23,7 @@ html, body {
 
 /*"zalozky"*/
 .nav-link {
-    font-size: 1.1em ;
+    font-size: 1.4em ;
 }
 /*nadpisy*/
 .welcome {
@@ -45,7 +45,27 @@ html, body {
     font-size: 2em;
 }
 
+.info {
+    color: black;
+}
 
+.author{
+    font-style: italic;
+    font-size: 18px;
+}
+
+.missing-r{
+    color: red;
+    font-size: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.missing-r a, .info a{
+    color: darkred;
+    font-style: italic;
+}
 
 /*--nadpisy tien */
 .display-4, h1{
@@ -53,14 +73,59 @@ html, body {
     text-shadow: 1px 1px 2px black, 0 0 25px #c6d9ec, 0 0 5px #669999;
 }
 
-.info {
-    font-style: italic;
-    color: red;
-}
-
 .btn {
     border-radius: 15px;
     border: 2px solid #669999;
+    font-size: 1.1em;
+}
+
+#topheader .navbar-nav li.active > a {
+    color: #ffffff;
+}
+
+.reg, .log, .recept {
+    color: #669999;
+    font-size: 1.4em;
+}
+
+
+#footer {
+    position: absolute;
+    background-color: #669999;
+    background-position: center;
+    height: 40px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer_txt {
+    float: right;
+    width: auto;
+    height: auto;
+    color: #FFFFFF;
+    font-size: 1.2em;
+    padding-top: 10px;
+    padding-right: 35px;
+    text-align: left;
+}
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+.posts {
+    background-position: center;
+    width: 100%;
+    color: #080808;
+}
+
+.recepty,.card text-center{
+    background-color: #669999;
+}
+.card-header,.card-body,.card-footer{
+    background-color: #FFFFFF;
 }
 
 

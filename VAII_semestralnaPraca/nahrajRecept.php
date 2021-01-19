@@ -8,18 +8,18 @@ if (isset($_REQUEST['r_title']) && isset($_REQUEST['r_content'])) {
 ?>
 
 
-<div class="recepty" style="background-color: #669999;">
+<div class="recepty">
     <?php
     $results = $db->getRecept();
     while ($value = $results->fetch_object()):?>
-        <div class="card-header" style="background-color: #FFFFFF">
+        <div class="card-header">
             <strong class="text-primary"> <?= $value->user ?> </strong>
         </div>
-        <div class="card-body" style="background-color: #FFFFFF">
+        <div class="card-body">
             <h5 class="card-title"><?= $value->r_title ?></h5>
             <p class="card-text"><?= $value->r_content ?></p>
         </div>
-        <div class="card-footer" style="background-color: #FFFFFF">
+        <div class="card-footer">
             <small class="text-muted"> <?= $value->date ?> </small>
         </div>
         <br>
