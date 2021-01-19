@@ -39,5 +39,6 @@ if (isset($_REQUEST['p_content']) && !empty($_REQUEST['p_content'])) {
                 </div>
             </div>
         </li>
+        <hr>
     <?php endwhile; ?>
 </ul>

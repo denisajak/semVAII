@@ -74,6 +74,7 @@ if (isset($_SESSION['user'])) {
                                         </div>
                                     </div>
                                 </li>
+                                <hr>
                             <?php endwhile; ?>
                         </ul>
                     </div>
