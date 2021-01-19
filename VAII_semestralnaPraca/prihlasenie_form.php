@@ -45,8 +45,6 @@ include 'navbar.php'; ?>
                 }
         });
     });
-
-
 </script>
 <?php include 'paticka.php'; ?>
 
